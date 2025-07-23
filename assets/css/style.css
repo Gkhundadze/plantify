@@ -1,0 +1,105 @@
+/* RESET START */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+}
+ul {
+    list-style: none;
+}
+button{
+    background-color: transparent;
+    border: none;
+}
+a {
+    text-decoration: none;
+}
+
+/* RESET END */
+
+@font-face {
+    font-family: "chillax-medium";
+    src: url(../fonts/Chillax-Variable.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: "steppe-regular";
+    src: url(../fonts/Chillax-Variable.ttf);
+    font-weight: 400;
+}
+
+
+:root {
+    --main-color:  #004F44;
+    --secondary-color: #EFF7F5;
+    --white-color: #fff;
+}
+
+
+
+.container {
+    max-width: 1157px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+.nav-link {
+    color: var(--white-color);
+    text-transform: capitalize;
+    font-family: "steppe-regular";
+}
+
+
+header {
+     background-color: var(--main-color);
+    & .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & ul {
+            gap: 40px;
+            display: flex;
+            align-items: center;
+        }
+        & .cta-wrapper {
+            display: flex;
+            gap: 20px;
+        }
+    }
+    & .welcome-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        & .content-wrapper {
+            margin-top: 40px;
+            color: var(--white-color);
+            font-family: "chillax-medium";
+            & h1 {
+                font-size: 64px;
+                line-height: 72px;
+                letter-spacing: 1.5px;
+            }
+            & p {
+                letter-spacing: .3px;
+                line-height: 28px;
+            }
+            & button {
+                padding: 20px 40px;
+                color: var(--white-color);
+                letter-spacing: .2px;
+                &:first-child {
+                    background-color: var(--secondary-color);
+                    color: var(--main-color);
+                }
+            }
+        }
+        & .images-wrapper {
+            display: flex;
+        }
+    }
+}
