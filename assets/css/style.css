@@ -36,6 +36,11 @@ a {
     --main-color:  #004F44;
     --secondary-color: #EFF7F5;
     --white-color: #fff;
+
+    --ball-black: #39362E;
+    --ball-pink: #F3A195;
+    --ball-late: #EFEAE6;
+    --ball-brown: #C38364;
 }
 
 
@@ -46,13 +51,41 @@ a {
     margin: 0 auto;
 }
 
+.relative {
+    position: relative;
+}
+
+.flex {
+    display: flex;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.align-center {
+    align-items: center;
+}
+
+.positioned-button {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    padding: 7px 15px;
+    font-size: 12px;
+    font-family: "steppe-regular";
+    text-transform: capitalize;
+}
 
 .nav-link {
     color: var(--white-color);
     text-transform: capitalize;
     font-family: "steppe-regular";
+    
 }
-
+.mb-3 {
+    margin-bottom: 3px;
+}
 
 header {
      background-color: var(--main-color);
@@ -100,6 +133,135 @@ header {
         }
         & .images-wrapper {
             display: flex;
+            gap: 3px;
+            & img {
+                display: block;
+            }
+            & .text-content {
+                position: absolute;
+                left: 50%;
+                bottom: 0px;
+                transform: translateX(-50%);
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                width: 100%;
+                height: 318px;
+                padding-inline: 25px;
+                font-family: "steppe-regular";
+                background: #2E403D;
+                background: linear-gradient(180deg, rgba(46, 64, 61, 0.79) 24%, rgba(35, 74, 69, 1) 93%);
+                & h2 {
+                    font-size: 28px;
+                    color: var(--white-color);
+                    margin-bottom: 6px;
+                }
+                & p {
+                    color: var(--white-color);
+                    font-size: 14px;
+                    margin-bottom: 18px;
+                }
+                & .read-more {
+                    background-color: var(--white-color);
+                    color: var(--main-color);
+                    padding: 17px 114px;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    margin-bottom: 25px;
+                }
+            }
         }
     }
+}
+
+
+/* general classes for featured section start*/
+.g-5 {
+    gap: 5px;
+}
+.g-28 {
+    gap: 28px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.mb-28 {
+    margin-bottom: 28px;
+}
+/* general classes for featured section end*/
+
+.featured {
+    padding-block: 70px;
+    & .title-view-all-wrapper {
+        margin-bottom: 48px;
+        color: var(--main-color);
+        letter-spacing: .5px;
+        & h2 {
+            font-size: 40px;
+            text-transform: capitalize;
+        }
+        & a {
+            font-size: 24px;
+            color: inherit;
+        }
+    }
+    & .featured-cards-wrapper {
+    max-width: 280px;
+    & .image-wrapper {
+        display: block;
+    }
+    & .content-wrapper {
+        font-family: "steppe-regular";
+
+        & h3 {
+            font-size: 20px;
+            color: var(--main-color);
+            letter-spacing: .3px;
+        }
+        & .price {
+            font-size: 20px;
+            color: var(--main-color);
+        }
+        & .color-picker {
+            & span {
+                display: inline-block;
+                color: #9EA9A7;
+                margin-bottom: 8px;
+            }
+            & .ball {
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            & .black {
+                background-color: var(--ball-black);
+            }
+            & .pink {
+                background-color: var(--ball-pink);
+            }
+            & .late {
+                background-color: var(--ball-late);
+            }
+            & .brown {
+                background-color: var(--ball-brown);
+            }
+        }
+        & button {
+            font-family: "steppe-regular";
+            color: var(--main-color);
+            padding: 8px 24px;
+            transition-duration: .3s;
+            text-transform: capitalize;
+            cursor: pointer;
+            border: 1px solid var(--main-color);
+            &:hover {
+                background-color: var(--main-color);
+                color: var(--white-color);
+
+            }
+        }
+    }
+}
 }
