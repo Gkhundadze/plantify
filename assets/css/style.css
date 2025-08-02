@@ -34,9 +34,9 @@ a {
 
 :root {
     --main-color:  #004F44;
+    --main-color-light: #F3FFFC;
     --secondary-color: #EFF7F5;
     --white-color: #fff;
-
     --ball-black: #39362E;
     --ball-pink: #F3A195;
     --ball-late: #EFEAE6;
@@ -64,7 +64,9 @@ a {
 .align-center {
     align-items: center;
 }
-
+.border {
+    border: 1px solid var(--main-color);
+}
 .positioned-button {
     position: absolute;
     top: 12px;
@@ -180,6 +182,12 @@ header {
 .g-5 {
     gap: 5px;
 }
+.g-15 {
+    gap: 15px;
+}
+.g-24 {
+    gap: 24px;
+}
 .g-28 {
     gap: 28px;
 }
@@ -191,21 +199,22 @@ header {
 }
 /* general classes for featured section end*/
 
+.title-view-all-wrapper {
+    margin-bottom: 48px;
+    color: var(--main-color);
+    letter-spacing: .5px;
+    & h2 {
+        font-size: 40px;
+        text-transform: capitalize;
+    }
+    & a {
+        font-size: 24px;
+        color: inherit;
+    }
+}
+
 .featured {
     padding-block: 70px;
-    & .title-view-all-wrapper {
-        margin-bottom: 48px;
-        color: var(--main-color);
-        letter-spacing: .5px;
-        & h2 {
-            font-size: 40px;
-            text-transform: capitalize;
-        }
-        & a {
-            font-size: 24px;
-            color: inherit;
-        }
-    }
     & .featured-cards-wrapper {
     max-width: 280px;
     & .image-wrapper {
@@ -255,7 +264,6 @@ header {
             transition-duration: .3s;
             text-transform: capitalize;
             cursor: pointer;
-            border: 1px solid var(--main-color);
             &:hover {
                 background-color: var(--main-color);
                 color: var(--white-color);
@@ -264,4 +272,107 @@ header {
         }
     }
 }
+}
+
+
+
+/* search section start */
+
+.search {
+    background-color: var(--main-color-light);
+    padding-block: 85px;
+
+    & .filter {
+        cursor: pointer;
+        padding: 8px;
+
+    }
+    & input[type="search"] {
+        flex-grow: 1;
+        letter-spacing: .3px;
+        padding: 22px 28px;
+
+    }
+    & input::placeholder {
+        color: var(--main-color);
+    }
+    & .search-submmit {
+        background-color: var(--main-color);
+        cursor: pointer;
+        padding: 16px;
+    }
+
+}
+
+
+/* new arrivals section start */
+
+.new-arrivals {
+    padding-block: 96px;
+    & .new-arrivals-wrapper {
+        & .new-arrival-card:nth-child(1) {
+            background-image: url(../img/new-arrival-blue-lily.jpg);
+
+        }
+        & .new-arrival-card:nth-child(2) {
+            background-image: url(../img/new-arrival-white-iris.png);
+
+        }
+        & .new-arrival-card:nth-child(3) {
+            background-image: url(../img/new-arrival-purple-flower.png);
+
+        }
+        & .new-arrival-card:nth-child(4) {
+            background-image: url(../img/new-arrival-red-flower.jpg);
+
+        }
+
+        & .new-arrival-card {
+            display: grid;
+            place-items: center;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 404px;
+            width: 268px;
+            font-family: "steppe-regular";
+            letter-spacing: .3px;
+            color: var(--white-color);
+            cursor: pointer;
+            &::before {
+                content: '';
+                background-color: rgba(1, 44, 38, .71);
+                position: absolute;
+                inset: 0;
+                visibility: hidden;
+                opacity: 0;
+                transition: .3s;
+            }
+            & > div  {
+                position: absolute;
+                z-index: 1;
+                visibility: hidden;
+                opacity: 0;
+                transition: .3s;
+            }
+            & h3 {
+                font-size: 29px;
+                text-transform: capitalize;
+            }
+            & a {
+                text-transform: lowercase;
+                color: inherit;
+            }
+            &:hover {
+                &::before {
+                    visibility: visible;
+                    opacity: 1;
+                }
+                & > div {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }
