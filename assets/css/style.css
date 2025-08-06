@@ -109,8 +109,10 @@ header {
     & .welcome-wrapper {
         display: flex;
         justify-content: space-between;
+        padding-block: 92px;
 
         & .content-wrapper {
+            max-width: 420px;
             margin-top: 40px;
             color: var(--white-color);
             font-family: "chillax-medium";
@@ -122,6 +124,7 @@ header {
             & p {
                 letter-spacing: .3px;
                 line-height: 28px;
+                padding-block: 32px;
             }
             & button {
                 padding: 20px 40px;
