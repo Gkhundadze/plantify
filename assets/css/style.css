@@ -130,6 +130,7 @@ header {
                 padding: 20px 40px;
                 color: var(--white-color);
                 letter-spacing: .2px;
+                cursor: pointer;
                 &:first-child {
                     background-color: var(--secondary-color);
                     color: var(--main-color);
@@ -137,6 +138,7 @@ header {
             }
         }
         & .images-wrapper {
+            z-index: 2;
             display: flex;
             gap: 3px;
             & img {
@@ -181,6 +183,23 @@ header {
                     margin-bottom: 25px;
                 }
             }
+        }
+    }
+    & .dot-grid {
+        position: absolute;
+        left: 50%;
+        bottom: 62px;
+        z-index: 1;
+        transform: translateX(-50%);
+        width: 115px;
+        height: 115px;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 12px;
+        & .dot {
+            width: 4px;
+            height: 4px;
+            background-color: #C4C4C4;
         }
     }
 }
@@ -230,7 +249,6 @@ header {
     }
     & .content-wrapper {
         font-family: "steppe-regular";
-
         & h3 {
             font-size: 20px;
             color: var(--main-color);
